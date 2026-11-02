@@ -1473,3 +1473,241 @@ body.light-mode .project-table th {
         transform: none;
     }
 }
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    isolation: isolate;
+    transition: 0.4s ease;
+}
+
+.gallery-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to top,
+        rgba(5, 10, 25, 0.95),
+        transparent 70%
+    );
+    transition: 0.4s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    border-color: #8b5cf6;
+    box-shadow: 0 15px 45px rgba(139, 92, 246, 0.25);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.12);
+}
+
+.gallery-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 25px;
+    right: 20px;
+    bottom: 25px;
+    color: white;
+}
+
+.gallery-overlay span {
+    display: inline-block;
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.gallery-overlay h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.gallery-overlay p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 350px;
+    }
+}
+
+/* ==================================
+   3 IMAGE SECTIONS - AURORA PORTFOLIO
+================================== */
+
+/* ABOUT IMAGE */
+
+.about-image {
+    width: 100%;
+    min-width: 0;
+}
+
+.about-image-frame {
+    height: 100%;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+}
+
+.about-image-frame img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.about-image-frame:hover img {
+    transform: scale(1.08);
+}
+
+.about-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 22px;
+    color: white;
+    background: linear-gradient(transparent, rgba(5,10,25,0.9));
+}
+
+.about-image-caption span {
+    color: #a78bfa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-image-caption h3 {
+    margin-top: 8px;
+    font-size: 24px;
+}
+
+/* EDUCATION IMAGE */
+
+.education-image {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 22px;
+}
+
+.education-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.education-image:hover img {
+    transform: scale(1.08);
+}
+
+.education-image span {
+    position: absolute;
+    bottom: 15px;
+    left: 18px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* PROJECT IMAGE */
+
+.project-image {
+    width: 160px;
+    height: 95px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.12);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .about-image-frame,
+    .about-image-frame img {
+        min-height: 300px;
+    }
+
+    .education-image {
+        height: 190px;
+    }
+
+    .project-image {
+        width: 120px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image-frame,
+    .about-image-frame img {
+        min-height: 260px;
+    }
+
+    .education-image {
+        height: 170px;
+    }
+}
